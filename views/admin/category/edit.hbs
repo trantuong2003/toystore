@@ -1,0 +1,25 @@
+<div class="body">
+  <form action="" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{cate.name}}" required />
+    <label for="country">Country:</label>
+    <input
+      type="text"
+      id="country"
+      name="country"
+      value="{{cate.country}}"
+      required
+    />
+    <label for="description">Description:</label>
+    {{!-- <textarea id="message" name="description" rows="4" value="{{ cate.description }}" required></textarea> --}}
+    <input
+      type="text"
+      id="description"
+      name="description"
+      value="{{cate.description}}"
+      required
+    />
+    <button type="submit">Edit</button>
+  </form>
+
+</div>

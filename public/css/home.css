@@ -1,0 +1,19 @@
+.swiper-slide {
+    width: 100%; /* Đảm bảo rộng của mỗi ô là 100% của container cha */
+  }
+
+  .image-holder {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Tạo khung vuông bằng cách đặt padding-bottom bằng 100% */
+    overflow: hidden;
+  }
+
+  .product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Đảm bảo rộng của hình ảnh bằng với khung vuông */
+    height: 100%; /* Đảm bảo chiều cao của hình ảnh bằng với khung vuông */
+    object-fit: cover; /* Hiển thị toàn bộ hình ảnh trong kích thước của khung vuông */
+  }

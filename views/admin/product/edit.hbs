@@ -1,0 +1,62 @@
+<div class="body">
+    <form action="/product/edit/{{ products._id }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ products.name }}" required>
+
+        <label for="size">Size:</label>
+        {{#equal products.size 'small' }}
+        <input type="radio" name="size" id="" value="small" checked="true">small
+        <br>
+        <input type="radio" name="size" id="" value="medium ">medium
+        <br>
+        <input type="radio" name="size" id="" value="large">large
+        <br>
+        <input type="radio" name="size" id="" value="random">random
+        {{/equal }}
+        {{#equal products.size 'medium' }}
+        <input type="radio" name="size" id="" value="small" >small
+        <br>
+        <input type="radio" name="size" id="" value="medium " checked="true">medium
+        <br>
+        <input type="radio" name="size" id="" value="large">large
+        <br>
+        <input type="radio" name="size" id="" value="random">random
+        {{/equal }}
+        {{#equal products.size 'large' }}
+        <input type="radio" name="size" id="" value="small" >small
+        <br>
+        <input type="radio" name="size" id="" value="medium ">medium
+        <br>
+        <input type="radio" name="size" id="" value="large" checked="true">large
+        <br>
+        <input type="radio" name="size" id="" value="random">random
+        {{/equal }}
+        {{#equal products.size 'random' }}
+        <input type="radio" name="size" id="" value="small" >small
+        <br>
+        <input type="radio" name="size" id="" value="medium ">medium
+        <br>
+        <input type="radio" name="size" id="" value="large">large
+        <br>
+        <input type="radio" name="size" id="" value="random" checked="true">random
+        {{/equal }}
+        <label for="prices">Prices:</label>
+        <input type="text" id="prices" name="prices" value="{{ products.prices }}" required>
+
+        <label for="image">Image:</label>
+        <input type="url" name="image" id="" value="{{ products.image }}" required>
+
+        <label for="category">Category:</label>
+        <select class="label" name="category" id="">
+            {{#each categori }}
+            {{#equal products.category this._id }}
+            <option value="{{ this._id }}" selected>{{ this.name }}</option>
+            {{/equal }}
+            <option value="{{ this._id }}">{{ this.name }}</option>
+            {{/each }}
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</div>

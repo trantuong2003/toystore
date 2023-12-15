@@ -1,0 +1,31 @@
+<div class="body">
+    <form action="/product/add" method="post">
+            <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="size">Size:</label>
+       <input type="radio" name="size" id="" value="small">small
+       <br>
+       <input type="radio" name="size" id="" value="medium ">medium
+       <br>
+       <input type="radio" name="size" id="" value="large">large
+       <br>
+       <input type="radio" name="size" id="" value="random">random
+
+        <label for="prices">Prices:</label>
+        <input type="text" id="prices" name="prices"  required>
+
+        <label for="image">Image:</label>
+        <input type="url" name="image" id="" required>
+
+        <label  for="category">Category:</label>
+        <select class="label" name="category" id="">
+            {{#each category }}
+            <option value="{{_id }}">{{ name }}</option>
+            {{/each }}
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
