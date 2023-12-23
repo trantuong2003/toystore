@@ -3,15 +3,17 @@ var router = express.Router();
 
 var ProductModel = require("../models/ProductModels");
 var CategoryModel = require("../models/CategoryModels");
+var BrandModel = require("../models/BrandModels");
 
 router.get("/", async (req, res) => {
-  var product = await ProductModel.find({}).populate("category");
+  var product = await ProductModel.find({}).populate("category").populate("brand");
   res.render("admin/product/index", { product, layout: "layout_admin" });
 });
 
 router.get("/add", async (req,res)=> {
   var category = await CategoryModel.find({});
-  res.render("admin/product/add" ,{category, layout: "layout_admin"});
+  var brand = await BrandModel.find({});
+  res.render("admin/product/add" ,{category, brand, layout: "layout_admin"});
 });
 
 router.post("/add", async (req, res)=>{

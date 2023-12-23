@@ -1,0 +1,21 @@
+<div class="body">
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    {{#each brand}}
+      <tr>
+        <td>{{name}}</td>
+        <td><a href="/category/edit/{{_id}}">Edit</a></td>
+        <td><a
+            href="/category/delete/{{_id}}"
+            onclick="return confirm('Are you sure to delete?');"
+          >Delete</a></td>
+      </tr>
+    {{/each}}
+  </table>
+</div>
+  <a href="/admin/add"  class="btn btn-success">Add new</a>
+

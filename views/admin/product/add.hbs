@@ -25,6 +25,13 @@
             {{/each }}
         </select>
 
+        <label  for="brand">Brand:</label>
+        <select class="label" name="brand" id="">
+            {{#each brand }}
+            <option value="{{_id }}">{{ name }}</option>
+            {{/each }}
+        </select>
+
         <button type="submit">Submit</button>
     </form>
 
